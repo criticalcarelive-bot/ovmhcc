@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mahjong Social Club</title>
+<meta name="viewport" content="width=1080, height=1920, initial-scale=1.0">
+
+<style>
+  :root {
+    --bg-primary: #7f1d1d;
+    --bg-panel: #991b1b;
+    --accent-gold: #fcd34d;
+    --text-white: #ffffff;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 1080px;
+    height: 1920px;
+    background: var(--bg-primary);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    color: var(--text-white);
+    overflow: hidden;
+  }
+
+  /* Fade overlay for smooth VXT/Multi-poster transitions */
+  #fade-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1080px;
+    height: 1920px;
+    background: var(--bg-primary);
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  .poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1080px;
+    height: 1920px;
+    background: var(--bg-primary);
+    padding: 100px 60px 80px 60px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-group {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 96px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+
+  .subline {
+    font-size: 42px;
+    color: var(--accent-gold);
+    font-weight: 700;
+  }
+
+  .tiles {
+    font-size: 130px;
+    margin: 20px 0;
+    letter-spacing: 12px;
+  }
+
+  .panel {
+    background: var(--bg-panel);
+    border-radius: 24px;
+    padding: 55px 60px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 0 3px var(--accent-gold);
+    text-align: left; /* Left-justifies date and time inside panel */
+  }
+
+  .label {
+    font-size: 44px;
+    font-weight: 800;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+
+  .value {
+    font-size: 76px;
+    font-weight: 900;
+    color: var(--text-white);
+  }
+
+  .footer-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .qr {
+    width: 310px;
+    height: auto;
+    display: block;
+  }
+
+  .qr-label {
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--accent-gold);
+    margin-top: 24px;
+  }
+</style>
+</head>
+
+<body>
+
+<div id="fade-overlay"></div>
+
+<div class="poster">
+  <div class="header-group">
+    <div class="title">MAHJONG SOCIAL CLUB</div>
+    <div class="subline">Tiles • Strategy • Good Company</div>
+  </div>
+
+  <div class="tiles">🀄 🀅 🀆 🀇 🀈 🀉</div>
+
+  <div class="panel">
+    <div class="label">Next Match</div>
+    <div class="value">Thursday, October 15</div>
+
+    <div class="label" style="margin-top: 40px;">Match Time</div>
+    <div class="value">6:00 PM – 8:00 PM</div>
+  </div>
+
+  <div class="footer-group">
+    <img class="qr" src="https://ovmhcc.org/wp-content/uploads/2026/06/OVMH_reserve_calendar-7f1d1d-matches-mahlong-and-pinochle.png" alt="Scan for OVMH Event Calendar">
+    <div class="qr-label">Scan for OVMH Event Calendar</div>
+  </div>
+</div>
+
+<script>
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      document.getElementById("fade-overlay").style.opacity = "0";
+    }, 50);
+  });
+</script>
+
+</body>
+</html>
